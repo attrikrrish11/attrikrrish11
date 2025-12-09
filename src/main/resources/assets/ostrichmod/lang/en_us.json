@@ -1,0 +1,10 @@
+{
+  "entity.ostrichmod.ostrich": "Ostrich",
+  "item.ostrichmod.ostrich_spawn_egg": "Ostrich Spawn Egg",
+  "item.ostrichmod.ostrich_feather": "Ostrich Feather",
+  "item.ostrichmod.ostrich_egg": "Ostrich Egg",
+  "advancements.ostrichmod.root.title": "Ostrich Mod",
+  "advancements.ostrichmod.root.description": "Encounter wild ostriches in the savanna",
+  "advancements.ostrichmod.breed_ostrich.title": "Speed Racer",
+  "advancements.ostrichmod.breed_ostrich.description": "Breed two ostriches with seeds"
+}

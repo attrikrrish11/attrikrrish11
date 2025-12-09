@@ -1,0 +1,60 @@
+plugins {
+    id 'fabric-loom' version '1.8-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = '1.0.0'
+group = 'com.ostrichmod'
+archivesBaseName = 'ostrich-entity-mod'
+
+base {
+    archivesName = archivesBaseName
+}
+
+repositories {
+    maven { url = 'https://api.modrinth.com/maven' }
+    maven { url = 'https://maven.terraformersmc.com/releases' }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21.5'
+    mappings loom.officialMojangMappings()
+    modImplementation 'net.fabricmc:fabric-loader:0.16.9'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.115.0+1.21.5'
+}
+
+processResources {
+    inputs.property 'version', version
+
+    filesMatching('fabric.mod.json') {
+        expand 'version': version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    withSourcesJar()
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${archivesBaseName}" }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+    }
+}
