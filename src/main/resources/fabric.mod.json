@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "ostrich-entity",
+  "version": "${version}",
+  "name": "Ostrich Entity Mod",
+  "description": "Adds Ostrich mobs to Minecraft with custom AI behaviors",
+  "authors": [
+    "Mod Author"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ostrichmod.OstrichEntityMod"
+    ],
+    "client": [
+      "com.ostrichmod.client.OstrichModClient"
+    ]
+  },
+  "mixins": [
+    "ostrich-entity.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "fabric-api": "*",
+    "minecraft": ">=1.21.5",
+    "java": ">=21"
+  }
+}
